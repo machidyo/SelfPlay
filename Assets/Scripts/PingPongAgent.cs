@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.MLAgents;
+﻿using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -54,7 +51,7 @@ public class PingPongAgent : Agent
 
     public override void Heuristic(float[] actionsOut)
     {
-        var action = (int)actionsOut[0];
+        actionsOut[0] = 0;
         if (Input.GetKey(KeyCode.LeftArrow)) actionsOut[0] = 1;
         if (Input.GetKey(KeyCode.RightArrow)) actionsOut[0] = 2;
     }
